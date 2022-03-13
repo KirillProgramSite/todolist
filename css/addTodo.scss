@@ -1,0 +1,54 @@
+@import 'vars/vars';
+
+.add-todo{
+    h1{
+        font-size: $fontNormal;
+        color:$brown2;
+        padding-bottom: 36px;
+    }
+
+    span{
+        color: $brown3;
+    }
+}
+
+.add-todo__form{
+    display: flex;
+    align-items: center;
+
+    input{
+        transition: .5s ease-in-out;
+        background: rgba(206, 171, 147, 0.35);
+        border-radius: 38.5px;
+        color:$brown2;
+        font-size: $fontMedium;
+        padding: 25px 0px;
+        padding-left: 50px;
+        font-family: Inter;
+        width: 770px;
+        margin-right: 22px;
+
+        &::placeholder{
+            color: $brown3;
+        }
+
+        &:focus{
+            background-color: $brown1;
+        }
+    }
+
+    button{
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        padding: 22px 65px;
+        color: $brown4;
+        background-color: $brown1;
+        font-size: $fontMedium;
+        border-radius: 34px;
+
+        &:hover{
+            background: $brown4;
+            color:$brown1;
+        }
+    }
+}

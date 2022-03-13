@@ -1,0 +1,51 @@
+@import 'vars/vars';
+@import 'mixins/button';
+
+.list-todo{
+    padding-top: 112px;
+}
+
+.list-todo_item{
+    padding: 54px 85px;
+    background-color: $brown4;
+    border-radius: 34px;
+    margin-bottom: 62px;
+}
+
+.list-todo_item-wrapper{
+    display: flex;
+    width: 870px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-todo_item-text{
+    h1{
+        font-size: $fontBig;
+        color: $brown2;
+        padding-bottom: 15px;
+    }
+
+    time{
+        font-size: $fontMedium;
+        color: $brown3;
+    }
+}
+
+.list-todo_item-actions{
+    display: flex;
+
+    svg{
+        margin-right: 29px;
+    }
+
+    button{
+        @include TodoBtn;
+        margin-right: 21px;
+
+        &:hover{
+            background: $brown3;
+            color:$brown1;
+        }
+    }
+}

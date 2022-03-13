@@ -1,0 +1,11 @@
+// @import 'vars/vars';
+
+@mixin TodoBtn {
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    padding: 22px 65px;
+    color: $brown4;
+    background-color: $brown1;
+    font-size: $fontMedium;
+    border-radius: 34px;
+}

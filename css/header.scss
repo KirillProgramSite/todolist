@@ -1,0 +1,15 @@
+@import 'vars/vars';
+
+.header{
+    background-color: $brown2;
+    padding: 40px 0px;
+
+    h1{
+        font-size: $fontBig;
+        color:$brown1;
+    }
+    
+    span{
+        color: $brown3;
+    }
+}

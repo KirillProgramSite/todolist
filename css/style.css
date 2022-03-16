@@ -28,6 +28,10 @@ main {
   main {
     padding-top: 0;
   }
+
+  .all_delete-btn {
+    display: none;
+  }
 }
 .all_delete-btn button {
   -webkit-transition: 0.5s ease-in-out;
@@ -74,9 +78,17 @@ main {
           justify-content: space-between;
 }
 
+.header__menu-burger {
+  display: none;
+}
+
 @media (max-width: 428px) {
   .header {
     width: 1050px;
+  }
+
+  .header__menu-burger {
+    display: block;
   }
 }
 .add-todo h1 {

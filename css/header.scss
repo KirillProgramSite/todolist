@@ -20,9 +20,17 @@
     }
 }
 
+.header__menu-burger{
+    display: none;
+}
+
 
 @media(max-width: 428px){
     .header{
         width: 1050px;
+    }
+
+    .header__menu-burger{
+        display: block;
     }
 }

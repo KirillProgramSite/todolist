@@ -76,6 +76,11 @@
 }
 
 
+.list-todo_item-actions-mobile__wrapper{
+    display: none;
+}
+
+
 @media(max-width: 428px){
     .list-todo_item-actions-mobile__wrapper{
         display: flex;
@@ -83,11 +88,6 @@
     }
 }
 
-
-
-.list-todo_item-actions-mobile__wrapper{
-    display: none;
-}
 
 .list-todo-actions-info{
     margin-right: 20px;

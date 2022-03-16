@@ -12,4 +12,17 @@
     span{
         color: $brown3;
     }
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+@media(max-width: 428px){
+    .header{
+        width: 1050px;
+    }
 }

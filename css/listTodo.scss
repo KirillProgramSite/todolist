@@ -21,10 +21,7 @@
 
 @media(max-width: 428px){
     .list-todo__wrapper{
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        justify-content: center;
+       padding-left: 150px;
     }
     .list-todo_item-wrapper{
        display: block;

@@ -55,6 +55,28 @@ main {
   background-color: #AD8B74;
 }
 
+.settings-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.settings-mobile img {
+  width: 50px;
+}
+
+.settings-mobile__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header {
   background-color: #CEAB93;
   padding: 40px 0px;
@@ -185,19 +207,7 @@ main {
 
 @media (max-width: 428px) {
   .list-todo__wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    padding-left: 150px;
   }
 
   .list-todo_item-wrapper {

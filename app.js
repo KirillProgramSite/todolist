@@ -1,11 +1,6 @@
+let listTodoWrapper = document.querySelector('.list-todo__wrapper');
 
 
-
-
-
-
-
-// 1 этап: Прописании логики приложения
 
 let todo = [
   { id: 1, text: "Купить пиво", checked: false },
@@ -15,7 +10,9 @@ let todo = [
 
 function renderTodo() {
   if (todo.length > 0) {
-    console.log(todo);
+   todo.map(function(todoList){
+      let div = document.createElement
+   })
   } else if (todo.length == 0) {
     console.log("Нет задач");
   }
@@ -48,3 +45,4 @@ function allDeleteTodo() {
     todo.length = 0;
     renderTodo();
 }
+

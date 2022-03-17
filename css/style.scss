@@ -37,6 +37,7 @@ main{
     }
 }
 
+
 .all_delete-btn button{
     @include TodoBtn;
     position: fixed;
@@ -52,6 +53,20 @@ main{
     &:hover{
         background-color: $brown1;
     }
+}
+
+.settings-mobile{
+   display: flex;
+   justify-content: flex-end;
+}
+
+.settings-mobile img{   
+    width: 50px;
+}
+
+.settings-mobile__wrapper{
+    display: flex;
+    align-items: center;
 }
 
 

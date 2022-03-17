@@ -1,4 +1,7 @@
 let listTodoWrapper = document.querySelector('.list-todo__wrapper');
+let settingsItemMain = document.querySelector('.settings-item__main');
+let settingsItemDel = document.querySelector('.settings-item__del');
+let settingsitemAddTodo = document.querySelector('.settings-item__add-todo');
 
 
 
@@ -11,7 +14,7 @@ let todo = [
 function renderTodo() {
   if (todo.length > 0) {
    todo.map(function(todoList){
-      let div = document.createElement
+      let div = document.createElement('div');
    })
   } else if (todo.length == 0) {
     console.log("Нет задач");
@@ -46,3 +49,11 @@ function allDeleteTodo() {
     renderTodo();
 }
 
+
+//Добавление убирание классов
+
+
+settingsItemMain.addEventListener('click', () => {
+  settingsItemDel.classList.toggle('animation-block');
+  settingsitemAddTodo.classList.toggle('animation-block');
+})

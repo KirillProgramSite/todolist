@@ -21,8 +21,7 @@ main {
 
 @media (max-width: 428px) {
   .container {
-    width: 800px;
-    margin: 0 auto;
+    padding: 0px 150px;
   }
 
   main {
@@ -56,12 +55,8 @@ main {
 }
 
 .settings-mobile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  position: fixed;
+  right: 10px;
 }
 
 .settings-mobile img {
@@ -69,12 +64,46 @@ main {
 }
 
 .settings-mobile__wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.settings-item__main {
+  z-index: 1;
+  background: #AD8B74;
+  border-radius: 50%;
+  padding: 29px 15px;
+}
+
+.settings-item__del {
+  -webkit-transform: translateX(90px);
+          transform: translateX(90px);
+}
+
+.settings-item__add-todo {
+  -webkit-transform: translateX(160px);
+          transform: translateX(160px);
+}
+
+.settings-item__add-todo,
+.settings-item__del {
+  z-index: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background-color: #CEAB93;
+  padding: 8px 9px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.animation-block {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .header {
@@ -106,7 +135,7 @@ main {
 
 @media (max-width: 428px) {
   .header {
-    width: 1050px;
+    width: 1150px;
   }
 
   .header__menu-burger {
@@ -207,7 +236,19 @@ main {
 
 @media (max-width: 428px) {
   .list-todo__wrapper {
-    padding-left: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .list-todo_item-wrapper {

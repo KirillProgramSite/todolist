@@ -24,8 +24,7 @@ main{
 
 @media(max-width: 428px){
     .container{
-        width: 800px;
-        margin: 0 auto;
+        padding: 0px 150px;
     }
 
     main{
@@ -56,8 +55,8 @@ main{
 }
 
 .settings-mobile{
-   display: flex;
-   justify-content: flex-end;
+   position: fixed;
+   right: 10px;
 }
 
 .settings-mobile img{   
@@ -65,8 +64,41 @@ main{
 }
 
 .settings-mobile__wrapper{
+    position: relative;
+
     display: flex;
     align-items: center;
+}
+
+.settings-item__main{
+    z-index: 1;
+    background: $brown1;
+    border-radius: 50%;
+    padding: 29px 15px;
+}
+
+.settings-item__del{
+    transform: translateX(90px);
+}
+
+.settings-item__add-todo{
+    transform: translateX(160px);
+}
+
+.settings-item__add-todo,
+.settings-item__del{
+    z-index: 0;
+    transition: .5s ease-in-out;
+
+    background-color: $brown2;
+    padding: 8px 9px;
+    border-radius: 50%;
+
+    margin-right: 10px;
+}
+
+.animation-block{
+    transform: translateX(0);
 }
 
 

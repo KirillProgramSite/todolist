@@ -19,14 +19,18 @@ let dateTodo = {
 
 let todo = [
   { id: 1, text: "Купить пиво", checked: false, date: dateTodo },
-  { id: 2, text: "Купить мясо", checked: false, date: dateTodo },
-  { id: 3, text: "Купить рыбу", checked: false, date: dateTodo },
+  { id: `${Math.random()}`, text: "Купить мясо", checked: false, date: dateTodo },
+  { id: `${Math.random()}`, text: "Купить рыбу", checked: false, date: dateTodo },
 ];
 
 function renderTodo() {
     let div = '';
 
     todo.map(function (todoList) {
+      if(todoList.checked == true){
+        return;
+      }
+
       //list-todo_item
       let dateText = `${todoList.date.day}.${todoList.date.month}.${todoList.date.year} ${todoList.date.hours}:${todoList.date.minutes}`;
 
@@ -38,7 +42,7 @@ function renderTodo() {
           <time>${dateText}</time>
       </div>
       <div class="list-todo_item-actions">
-          <button>Сделано</button>
+          <button data-id="${todoList.id}">Сделано</button>
       </div>
       <div class="list-todo_item-actions-mobile">
           <div class="list-todo_item-actions-mobile__wrapper">
@@ -49,7 +53,7 @@ function renderTodo() {
                   <img src="sprites/delete.svg" alt="">
               </div>
               <div class="list-todo-actions-btn">
-                  <button>Сделано</button>
+                  <button data-id="${todoList.id}">Сделано</button>
               </div>
           </div>
       </div>
@@ -62,7 +66,7 @@ function renderTodo() {
 
 function addTodo(newText) {
   if (newText) {
-    todo.unshift({ id: 1, text: newText, checked: false, date: dateTodo });
+    todo.unshift({ id: `${Math.random()}`, text: newText, checked: false, date: dateTodo });
     renderTodo();
   } else {
     alert("Веддите текст");
@@ -73,12 +77,14 @@ function deleteTodo(pos) {
   todo.splice(pos, 1);
 }
 
-function checkedTodo(index, value) {
-  if (value == true) {
-    todo[index].checked = true;
-  } else if (value == false) {
-    todo[index].checked = false;
-  }
+function checkedTodo(id) {
+  todo.forEach(todo => {
+    if(todo.id == id) {
+      todo.checked = true;
+    }
+  })
+
+  renderTodo();
 }
 
 function allDeleteTodo() {
@@ -94,14 +100,39 @@ settingsItemMain.addEventListener("click", () => {
   settingsitemAddTodo.classList.toggle("animation-block");
 });
 
+// if(todo.length == 0) {
+//   allDeleteBtn.style.display = 'none';
+//   settingsItemDel.style.display = 'none';
+// } else {
+//   allDeleteBtn.style.display = 'block';
+//   settingsItemDel.style.display = 'block';
+
+//   allDeleteBtn.addEventListener('click', allDeleteTodo);
+//   settingsItemDel.addEventListener('click', allDeleteTodo)
+// }
+
 allDeleteBtn.addEventListener('click', allDeleteTodo);
 settingsItemDel.addEventListener('click', allDeleteTodo)
 
 
 addTodoBtn.addEventListener('click', () => {
-  let text = addTodoInput.value;
-  addTodo(text);
-  addTodoInput.value = '';
+  if(addTodoInput.value.length > 90){
+    alert(`Больше 500 символов быть не должно. Изъяснитесь понятнее. Вы ввели ${addTodoInput.value.length}`);
+    addTodoInput.value = '';
+  } else {
+    let text = addTodoInput.value;
+    addTodo(text);
+    addTodoInput.value = '';
+  }
+})
+
+listTodoWrapper.addEventListener('click', event => {
+  if(event.target.tagName !== 'BUTTON') {
+    return;
+  } else {
+    const id = event.target.dataset.id;
+    checkedTodo(id);
+  }
 })
 
 renderTodo()

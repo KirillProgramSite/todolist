@@ -147,6 +147,9 @@ main {
     display: block;
   }
 }
+.add-todo {
+  padding-top: 100px;
+}
 .add-todo h1 {
   font-size: 36px;
   color: #CEAB93;
@@ -210,11 +213,6 @@ main {
   color: #AD8B74;
 }
 
-@media (max-width: 428px) {
-  .add-todo {
-    display: none;
-  }
-}
 .list-todo {
   padding-top: 112px;
 }

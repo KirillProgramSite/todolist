@@ -1,6 +1,8 @@
 @import 'vars/vars';
 
 .add-todo{
+    padding-top: 100px;
+
     h1{
         font-size: $fontNormal;
         color:$brown2;
@@ -53,8 +55,8 @@
     }
 }
 
-@media(max-width: 428px){
-    .add-todo{
-        display: none;
-    }
-}
+// @media(max-width: 428px){
+//     .add-todo{
+//         display: none;
+//     }
+// }
